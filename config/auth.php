@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -111,5 +115,11 @@ return [
     */
 
     'password_timeout' => 10800,
+    'token_expiration' => [
+        'token' => env('EXPIRATION_TOKEN', 14400),
+        //  10 * 24 * 60 = 14400
+        'refresh_token' => env('EXPIRATION_REFRESH_TOKEN', 43200),
+        //  30 * 24 * 60 = 43200
+    ]
 
 ];
