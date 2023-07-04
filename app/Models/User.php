@@ -60,8 +60,6 @@ class User extends Authenticatable
     {
         $user = static::where('mobile', $username)->orWhere('email', $username)->first();
 
-        dd($user);
-
         return $user;
     }
 }

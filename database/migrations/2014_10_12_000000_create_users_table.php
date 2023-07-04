@@ -13,8 +13,8 @@ return new class extends Migration {
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('mobile', length: 13)->unique();
-            $table->string('email')->unique();
+            $table->string('mobile', length: 13)->unique()->nullable();
+            $table->string('email')->unique()->nullable();
             $table->string('name');
             $table->string('password');
             $table->enum('type', User::TYPES)->default(User::TYPE_USER);

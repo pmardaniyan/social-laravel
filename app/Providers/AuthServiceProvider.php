@@ -22,7 +22,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        // Passport::ignoreRoutes();
         Passport::tokensExpireIn(now()->addMinutes(config('auth.token_expiration.token')));
         Passport::refreshTokensExpireIn(now()->addMinutes('auth.token_expiration.refresh_token'));
 
